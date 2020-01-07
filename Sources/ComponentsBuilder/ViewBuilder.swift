@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewFactory {
+public class ViewBuilder {
 
     // MARK: - Properties
 
@@ -23,19 +23,19 @@ class ViewFactory {
 
     // MARK: - Helpers
 
-    func withBackgrounColor(_ color: UIColor) -> Self {
+    public func withBackgrounColor(_ color: UIColor) -> Self {
         view.backgroundColor = color
 
         return self
     }
 
-    func withCornerRadius(_ radius: CGFloat) -> Self {
+    public func withCornerRadius(_ radius: CGFloat) -> Self {
         view.layer.cornerRadius = radius
 
         return self
     }
 
-    func withSubView(_ view: UIView) -> Self {
+    public func withSubView(_ view: UIView) -> Self {
         view.addSubview(view)
 
         return self
@@ -45,8 +45,8 @@ class ViewFactory {
 
 // MARK: Buildable implementation
 
-extension ViewFactory: Buildable {
-    func build() -> UIView {
+extension ViewBuilder: Buildable {
+    public func build() -> UIView {
         return view
     }
 }

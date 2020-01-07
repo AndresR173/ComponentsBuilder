@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageViewFactory {
+public class ImageViewBuilder {
 
     // MARK: - Properties
 
@@ -24,25 +24,25 @@ class ImageViewFactory {
 
     // MARK: - Helpers
 
-    func withCornerRadius(_ radius: CGFloat) -> Self {
+    public func withCornerRadius(_ radius: CGFloat) -> Self {
         imageView.layer.cornerRadius = radius
 
         return self
     }
 
-    func withClipToBounds(enabled: Bool) -> Self {
+    public func withClipToBounds(enabled: Bool) -> Self {
         imageView.clipsToBounds = enabled
 
         return self
     }
 
-    func withContentMode(_ contentMode: UIView.ContentMode) -> Self {
+    public func withContentMode(_ contentMode: UIView.ContentMode) -> Self {
         imageView.contentMode = contentMode
 
         return self
     }
 
-    func withTintColor(_ color: UIColor) -> Self {
+    public func withTintColor(_ color: UIColor) -> Self {
         imageView.tintColor = color
 
         return self
@@ -51,8 +51,8 @@ class ImageViewFactory {
 
 // MARK: Buildable implementation
 
-extension ImageViewFactory: Buildable {
-    func build() -> UIImageView {
+extension ImageViewBuilder: Buildable {
+    public func build() -> UIImageView {
         return imageView
     }
 }

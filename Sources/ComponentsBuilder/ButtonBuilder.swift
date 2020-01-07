@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ButtonFactory {
+public class ButtonBuilder {
 
     // MARK: - Properties
     private let button: UIButton
@@ -50,7 +50,7 @@ public class ButtonFactory {
 
 // MARK: Buildable implementation
 
-extension ButtonFactory: Buildable {
+extension ButtonBuilder: Buildable {
     public func build() -> UIButton {
         return button
     }

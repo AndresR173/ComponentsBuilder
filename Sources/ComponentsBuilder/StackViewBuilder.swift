@@ -8,11 +8,11 @@
 
 import UIKit
 
-class StackViewFactory {
+public class StackViewBuilder {
 
     // MARK: - Properties
 
-    let stackView: UIStackView
+    private let stackView: UIStackView
 
     // MARK: - Init
 
@@ -24,25 +24,25 @@ class StackViewFactory {
 
     // MARK: - Helpers
 
-    func withSpacing(_ spacing: CGFloat) -> Self {
+    public func withSpacing(_ spacing: CGFloat) -> Self {
         stackView.spacing = spacing
 
         return self
     }
 
-    func withDistribution(_ distribution: UIStackView.Distribution) -> Self {
+    public func withDistribution(_ distribution: UIStackView.Distribution) -> Self {
         stackView.distribution = distribution
 
         return self
     }
 
-    func withAlignment(_ alignment: UIStackView.Alignment) -> Self {
+    public func withAlignment(_ alignment: UIStackView.Alignment) -> Self {
         stackView.alignment = alignment
 
         return self
     }
 
-    func withArrangedSubView(_ view: UIView) -> Self {
+    public func withArrangedSubView(_ view: UIView) -> Self {
         stackView.addArrangedSubview(view)
 
         return self
@@ -51,8 +51,8 @@ class StackViewFactory {
 
 // MARK: Buildable implementation
 
-extension StackViewFactory: Buildable {
-    func build() -> UIStackView {
+extension StackViewBuilder: Buildable {
+    public func build() -> UIStackView {
         return stackView
     }
 }

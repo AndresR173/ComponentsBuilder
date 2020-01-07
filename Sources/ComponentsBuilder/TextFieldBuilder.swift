@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TextFieldFactory {
+public class TextFieldBuilder {
 
     // MARK: - Properties
 
@@ -25,49 +25,49 @@ class TextFieldFactory {
 
     // MARK: - Helpers
 
-    func withSecureEntryEnabled(_ isEnabled: Bool) -> Self {
+    public func withSecureEntryEnabled(_ isEnabled: Bool) -> Self {
         textField.isSecureTextEntry = isEnabled
 
         return self
     }
 
-    func withKeyboardType(_ type: UIKeyboardType) -> Self {
+    public func withKeyboardType(_ type: UIKeyboardType) -> Self {
         textField.keyboardType = type
 
         return self
     }
 
-    func withBorderStyle(_ style: UITextField.BorderStyle) -> Self {
+    public func withBorderStyle(_ style: UITextField.BorderStyle) -> Self {
         textField.borderStyle = style
 
         return self
     }
 
-    func withTextColor(_ color: UIColor) -> Self {
+    public func withTextColor(_ color: UIColor) -> Self {
         textField.textColor = color
 
         return self
     }
 
-    func withTextAligment(_ alignment: NSTextAlignment) -> Self {
+    public func withTextAligment(_ alignment: NSTextAlignment) -> Self {
         textField.textAlignment = alignment
 
         return self
     }
 
-    func withFont(_ font: UIFont) -> Self {
+    public func withFont(_ font: UIFont) -> Self {
         textField.font = font
 
         return self
     }
 
-    func withFontSize(_ size: CGFloat) -> Self {
+    public func withFontSize(_ size: CGFloat) -> Self {
         textField.font = textField.font?.withSize(size)
 
         return self
     }
 
-    func withClearButton(_ mode: UITextField.ViewMode) -> Self {
+    public func withClearButton(_ mode: UITextField.ViewMode) -> Self {
         textField.clearButtonMode = mode
 
         return self
@@ -77,8 +77,8 @@ class TextFieldFactory {
 
 // MARK: Buildable implementation
 
-extension TextFieldFactory: Buildable {
-    func build() -> UITextField {
+extension TextFieldBuilder: Buildable {
+    public func build() -> UITextField {
         return textField
     }
 }

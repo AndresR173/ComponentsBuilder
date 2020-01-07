@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LabelFactory {
+public class LabelBuilder {
 
     // MARK: - Properties
 
@@ -24,37 +24,37 @@ class LabelFactory {
 
     // MARK: - Helpers
 
-    func withFontSize( _ fontSize: CGFloat) -> Self {
+    public func withFontSize( _ fontSize: CGFloat) -> Self {
         label.font = label.font.withSize(fontSize)
 
         return self
     }
 
-    func withTextColor( _ color: UIColor) -> Self {
+    public func withTextColor( _ color: UIColor) -> Self {
         label.textColor = color
 
         return self
     }
 
-    func withNumberOfLines(_ numberOfLines: Int) -> Self {
+    public func withNumberOfLines(_ numberOfLines: Int) -> Self {
         label.numberOfLines = numberOfLines
 
         return self
     }
 
-    func withTextAlignment(_ textAlignment: NSTextAlignment) -> Self {
+    public func withTextAlignment(_ textAlignment: NSTextAlignment) -> Self {
         label.textAlignment = textAlignment
 
         return self
     }
 
-    func withFont(_ font: UIFont) -> Self {
+    public func withFont(_ font: UIFont) -> Self {
         label.font = font
 
         return self
     }
 
-    func withText(_ text: String) -> Self {
+    public func withText(_ text: String) -> Self {
         label.text = text
 
         return self
@@ -64,8 +64,8 @@ class LabelFactory {
 
 // MARK: Buildable implementation
 
-extension LabelFactory: Buildable {
-    func build() -> UILabel {
+extension LabelBuilder: Buildable {
+    public func build() -> UILabel {
         return label
     }
 }
